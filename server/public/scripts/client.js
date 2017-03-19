@@ -5,6 +5,17 @@ var calculateNum='/';
 
 $(document).ready(function(){
   console.log("Hi");
+  $("#addNumber").on("submit", function(event) {
+    event.preventDefault();
+    serverSide();
+
+    $('#clear').on('click', function(event) {
+      event.preventDefault();
+      $('#number1').val('');
+      $('#number2').val('');
+      $('#outputDiv').empty();
+    });
+  });
 
   $("#submitAdd").on("click", function(){
     calculateNum='+';
@@ -21,21 +32,10 @@ $(document).ready(function(){
   });
 });
 
-$('#submit').on('click', function(event) {
-  event.prevErr();
-  serverSide();
-});
-
-$('#clear').on('click', function(event) {
-  event.prevErr();
-  $('#number1').val('');
-  $('#number2').val('');
-  $('#outputDiv').empty();
-});
 
 
-var proRes = function (response) {
-  console.log('in proRes: ' + response);
+var proResponse = function (response) {
+  console.log('in proResponse: ' + response);
   $('#outputDiv').text(response);
 };
 
@@ -48,7 +48,7 @@ function serverSide () {
   var inputObject = {
     "input1": number1,
     "input2": number2,
-    "oper":mathCalculation
+    "oper": mathCalculation
   };
 
   $.ajax({
@@ -58,7 +58,7 @@ function serverSide () {
     success: function(newData){
       console.log(newData);
 
-      proRes(newData);
+      proResponse(newData);
     },
     statusCode: {
       404: function() {
@@ -69,7 +69,14 @@ function serverSide () {
 }
 
 
+// $('#submit').on('click', function(event) {
+//   event.preventDefault();
+//   serverSide();
+// });
 
+// $("form").submit(function(){
+//        alert("Recalculate");
+//    });
 
 // AJAX here
 // var num1 = (form input 1)

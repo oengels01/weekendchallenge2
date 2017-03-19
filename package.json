@@ -14,5 +14,13 @@
     "jquery": "^3.2.0"
   },
   "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oengels01/weekendchallenge2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oengels01/weekendchallenge2/issues"
+  },
+  "homepage": "https://github.com/oengels01/weekendchallenge2#readme",
   "description": ""
 }
