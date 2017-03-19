@@ -69,10 +69,7 @@ function serverSide () {
 }
 
 
-// $('#submit').on('click', function(event) {
-//   event.preventDefault();
-//   serverSide();
-// });
+
 
 // $("form").submit(function(){
 //        alert("Recalculate");
